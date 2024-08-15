@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // syntax 
+
+        //    class classname{
+        //     constructor(parameter){
+        //         this.parameter = parameter
+        //     }
+        //     methods 
+        // }
+
+
+        //creating class
+        class calculator {
+            constructor(first_num, last_num) {
+                this.first_num = first_num,
+                    this.last_num = last_num
+            }
+
+             sum(){
+                document.write(this.first_num + this.last_num +"<br>")
+            }
+            sub(){
+                document.write(this.first_num - this.last_num +"<br>")
+            }
+            mul(){
+                document.write(this.first_num * this.last_num +"<br>")
+            }
+            div(){
+                document.write(this.first_num / this.last_num +"<br>")
+            }
+        }
+
+        //creating object
+        let c = new calculator(30, 70)
+        
+        c.sum()
+        c.sub()
+        c.mul()
+        c.div()
+
+
+       
+
+
+
+    </script>
+
+</body>
+
+</html>
