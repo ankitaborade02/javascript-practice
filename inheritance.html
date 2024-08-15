@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //creating parent class
+        class employee{
+            constructor(name){
+                this.name = name
+            }
+
+            alldata(){
+                return "name of the employee :"+this.name  +"<br>"
+            }
+        }
+
+
+        //craeting child class
+        class admin extends employee{
+            constructor(name, age){
+                super(name)
+                this.age = age
+            }
+            admindata(){
+                return this.alldata()+ " "+ "and my age is :" + this.age
+            }
+        }
+        let a =  new admin("peter",30)
+        document.write(a.admindata())
+    </script>
+    
+</body>
+</html>
