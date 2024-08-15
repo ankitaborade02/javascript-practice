@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+ // function with default parameter
+
+        function info(id, name = "john ") {
+            document.write(id, name +"<br>")
+
+        }
+        info(101 + "<br>")
+
+
+
+ //function with return statement
+
+        function ab  (a, b){
+            return(a+b)
+        }
+        let abc= ab(10,20)
+        document.write(abc + "<br>")
+
+// function with multiple argument
+       
+        function add(...a){
+            let add=0;
+            for(let num of a){
+                add += num
+            }
+            return add
+        }
+        let x = add(10 ,30 ,20, 22 ,99)
+        document.write(x)
+
+
+        
+    </script>
+
+</body>
+
+</html>

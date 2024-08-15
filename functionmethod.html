@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //  1. call method
+
+
+        let person = {
+            fullname: function () {
+                return this.firstname + " " + this.lastname
+            }
+        }
+
+        person1 = {
+            firstname: "john",
+            lastname: "willium",
+        }
+
+        person2 = {
+            firstname: "max",
+            lastname: "robert",
+        }
+
+        document.write(person.fullname.call(person2) + "<br>")
+
+
+        // 2. apply method
+
+        const people = {
+            fullname: function (city, country) {
+                return this.firstname + " " + this.lastname + " " + city + " " + country
+            }
+        }
+        const person3 = {
+            firstname: "ankita",
+            lastname: "more",
+        }
+
+        const person4 = {
+            firstname: "jaya",
+            lastname: "max",
+        }
+
+        document.write(person.fullname.apply(person1, ["solapur", "india"])+"<br>")
+
+
+//  3.  bind method
+
+const person5 = {
+            firstname: "alexa",
+            lastname: "rawer",
+            lastname : function(city,country){
+                return this.firstname + " " + this.lastname + " " 
+
+            }
+        }
+        const member ={
+            firstname : "maxiwell",
+            lastname : "roberty"
+        }
+        let fullname = person.fullname.bind(member)
+        document.write(fullname())
+    </script>
+
+</body>
+
+</html>
