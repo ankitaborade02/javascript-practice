@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      class bank{
+        constructor(name, acc_no, balance){
+            this.name = name
+            this.acc_no = acc_no
+            let _balance = balance
+
+            this.info = function(){
+                console.log("Name of the account holder:", this.name);
+                console.log("Account number:", this.acc_no);
+                console.log("Balance is :", this._getbalance());
+            }
+
+            this.deposite = function(amt){
+                _balance += amt
+            }
+            this.withdraw = function(amt){
+                _balance -= amt
+            }
+            this.update = function(){
+                console.log("current balance is:" , _balance);
+            }
+            this._getbalance = function(){
+                return _balance
+            }
+        }
+      }
+      const b = new bank("john", 1235,4000)
+    //   b.balance ="100"
+      b.info()
+      b.deposite(30000)
+      b.withdraw(900)
+      
+    
+    </script>
+    
+</body>
+</html>
