@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        
+        //try catch statement
+        try{
+            alert("welcome guest..!!!")
+        }
+        catch(error){
+            document.getElementById("demo"+"<br>").innerHTML = error.msg
+        }
+
+
+        //throw statement
+        function myfun (){
+            var a = 100
+            var b = 0
+
+            try{
+                if(b == 0){
+                    throw("divide by zero error")
+                }
+                else{
+                    var c = a/b;
+                    document.write(c)
+                }
+            }catch (error){
+                document.write(error)
+
+            }
+        }
+        myfun();
+
+
+        //try catch finally statement
+        function myfun (){
+            var a = 100
+            var b = 0
+
+            try{
+                if(b == 0){
+                    throw("divide by zero error")
+                }
+                else{
+                    var c = a/b;
+                    document.write(c)
+                }
+            }catch (error){
+                document.write(error)
+
+            }
+            finally{
+                alert("All Done..")
+            }
+        }
+        myfun();
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
