@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p onmouseover="clickevent()">keep cursor over me </p>
+    <p onmouseout="clickevent()">keep cursor over me </p>
+    <p id="msg"></p>
+    
+    <script>
+        // onmouseover event
+        function clickevent(){
+            alert("this is mouseover event"+"<br>")
+        }
+
+        // onmouseout event 
+        function click(){
+            alert("this is mouseout event")
+        }
+        // onmousedown event
+        function clickevent(){
+            alert("this is mousedown event")
+        }
+
+
+
+    </script>
+    <button onmousedown="clickevent()" id="btn">click with any mouse button left,right</button>
+    
+</body>
+</html>
