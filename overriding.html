@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //javascript predefined function/method
+        function demo(){
+            console.log("this is override function")
+        }
+        demo()
+
+        //userdefined function/method
+        function sum(a, b, c){
+            return a+b+c
+
+        }
+        function sum(a, b){
+            return a+b
+
+        }
+        document.write(sum(10, 50,3)+"<br>")
+
+        //parent class function/method
+
+        class calculation{
+            cal(){
+            document.write("lets override")
+            }
+        }
+         
+        class triangle extends calculation{
+            cal(x){
+                document.write(x*x)
+            }
+        }
+        var tri = new triangle()
+        tri.cal(12)
+
+
+
+    </script>
+    
+</body>
+</html>
