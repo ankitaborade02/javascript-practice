@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="msg">A paragraph tag</p>
+
+    <form name="form1">
+        enter name: <input type="text" name=" name" id="">
+        <input type="button" value="submit" onclick="printname()">
+    </form>
+    <script>
+        // get element by id
+
+        const result = document.getElementById("msg")
+        console.log(result);
+         
+
+        // get element by name
+
+        function printname(){
+            let name = document.form1.name.value;
+            alert("welcome" + name)
+        }
+        
+        
+
+    </script>
+
+    <!-- // get element by tagname  -->
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam voluptatibus voluptatem tempore a ea minus aut laudantium eius libero! Eveniet, odit?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione magni quia adipisci cupiditate beatae!</p>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam id veritatis et necessitatibus ipsam delectus vel quis error praesentium unde?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error?</p>
+
+    <button onclick="countpara()">count paragraph tag</button>
+
+    <script>
+        function countpara(){
+            let totalpara = document.getElementsByTagName("p")
+            alert(totalpara.length)
+        }
+
+
+        
+    </script>
+</body>
+</html>
