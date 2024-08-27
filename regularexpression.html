@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        //match method
+
+        // let text = "welcome to javascript"
+        // let pattern = /javascript/gmi
+        // let result = text.match(pattern)
+        // document.getElementById("demo").innerHTML = result
+
+        //search method
+
+        // let text = "welcome to bootstrap"
+        //     let pattern = /bootstrap/mg
+        //     let result = text.search(pattern)
+        //     document.getElementById("demo").innerHTML = result
+
+        //replace
+        
+        let text = "welcome to bootstrap"
+        let pattern = /welcome/mg
+        let result = text.replace(pattern, "hello")
+        document.getElementById("demo").innerHTML = result
+
+
+
+
+    </script>
+
+</body>
+
+</html>
