@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        function person(name,age){
+            this.name = name
+            this.age = age;
+
+        }
+         person.prototype.lang = "english"
+        const p = new person("john", 29)
+
+        person.prototype.job = function(){
+            return "hello"
+        }
+        document.getElementById("demo").innerHTML = "my name is"+p.name +"<br>"+ "my age is" + p.age+"<br>"+ "my language is:" + p.lang +"<br> "+p.job()
+        
+    </script>
+   
+    
+</body>
+</html>
