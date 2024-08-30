@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //window releted
+
+        document.write("Innerwidth is:" +window.innerWidth +"<br>" , "innerheight is:" + window.innerHeight +"<br>")
+
+        document.write("outerwidth is:" +window.outerWidth +"<br>" , "oterheight is:" + window.outerHeight +"<br>")
+
+
+
+    </script>
+
+    <!-- //open method  -->
+    <button onclick="openwindow()">Open</button>
+    <script>
+        function openwindow(){
+            let newwindow = window.open("https://www.flipkart.com/", '_blank')
+        }
+    </script>
+    
+</body>
+</html>
