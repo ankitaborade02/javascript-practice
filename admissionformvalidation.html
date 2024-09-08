@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Your CSS styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url(sky2.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+            background: transparent;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+        
+        #name,
+        #add,
+        #dob,
+        #contact,
+        #email,
+        #guard,
+        #education,
+        #year,
+        #marksheet,
+        #course,
+        #projects,
+        #skills {
+            width: 90%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid black;
+            border-radius: 6px;
+        }
+        
+        fieldset {
+            width: 80%;
+        }
+        
+        #submitbtn,
+        #resetbtn {
+            padding: 10px 20px;
+            background-color: aqua;
+            color: black;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        #submitbtn:hover,
+        #resetbtn:hover {
+            background-color: rgb(33, 245, 22);
+            color: rgb(17, 3, 3);
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="f3">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="name">Name</label>
+            <input type="text" id="name"><br><br>
+
+            <label for="add">Address</label>
+            <textarea name="add" id="add" required></textarea><br><br>
+
+            <label for="contact">Contact:</label>
+            <input type="text" id="contact"><br><br>
+
+            <label for="dob">DOB:</label>
+            <input type="date" id="dob"><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email"><br><br>
+
+            <label for="guard">Guardian:</label>
+            <input type="text" id="guard"><br><br>
+        </fieldset><br>
+
+        <fieldset>
+            <legend>Educational Information</legend>
+            <label for="education">Completed Education:</label>
+            <input type="text" id="education"><br><br>
+
+            <label for="admission">Admission Year:</label>
+            <input type="date" id="admission"><br><br>
+
+            <label for="marksheet">Previous Marksheet:</label>
+            <input type="file" id="marksheet"><br><br>
+
+            <label for="project">Projects:</label>
+            <input type="file" id="project"><br><br>
+
+            <label for="skill">Skills:</label>
+            <textarea name="skills" id="skill"></textarea>
+        </fieldset><br><br>
+
+        <input type="reset" value="Reset" id="resetbtn">
+        <input type="submit" value="Submit" id="submitbtn" onclick="validation()"><br>
+        <span id="s3"></span>
+    </form>
+
+    <script>
+        function validation() {
+            let name = document.getElementById("name").value;
+            let address = document.getElementById("add").value;
+            let contact = document.getElementById("contact").value;
+            let dob = document.getElementById("dob").value;
+            let email = document.getElementById("email").value;
+            let guardian = document.getElementById("guard").value;
+            let education = document.getElementById("education").value;
+            let admissionYear = document.getElementById("admission").value;
+            let marksheet = document.getElementById("marksheet").value;
+            let project = document.getElementById("project").value;
+            let skills = document.getElementById("skill").value;
+            let r = "";
+
+            // Name validation
+            if (name.length === 0) {
+                r += "Name should not be empty.<br>";
+            } else if (name.length < 3 || name.length > 10) {
+                r += "Name should be between 3 to 10 characters.<br>";
+            }
+
+            // Address validation
+            if (address.length === 0) {
+                r += "Address should not be empty.<br>";
+            }
+
+            // Contact validation (simple example for phone number)
+            let contactPattern = /^[0-9]{10}$/;
+            if (!contactPattern.test(contact)) {
+                r += "Contact should be a 10-digit phone number.<br>";
+            }
+
+            // DOB validation
+            if (dob === "") {
+                r += "DOB should not be empty.<br>";
+            }
+
+            // Email validation
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                r += "Email should be a valid email address.<br>";
+            }
+
+            // Guardian validation
+            if (guardian.length === 0) {
+                r += "Guardian should not be empty.<br>";
+            }
+
+            // Completed Education validation
+            if (education.length === 0) {
+                r += "Completed Education should not be empty.<br>";
+            }
+
+            // Admission Year validation
+            if (admissionYear === "") {
+                r += "Admission Year should not be empty.<br>";
+            }
+
+            // Previous Marksheet validation (check if a file is selected)
+            if (marksheet === "") {
+                r += "Previous Marksheet should be provided.<br>";
+            }
+
+            // Projects validation (check if a file is selected)
+            if (project === "") {
+                r += "Projects file should be provided.<br>";
+            }
+
+            // Skills validation
+            if (skills.length === 0) {
+                r += "Skills should not be empty.<br>";
+            }
+
+            document.getElementById("s3").innerHTML = r;
+        }
+    </script>
+</body>
+</html>
