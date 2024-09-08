@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .form{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'poppins', sans-serif;
+       
+      
+    }
+    body{
+        height: 70vh;
+        display: flex;
+        padding-left: 400px;
+        margin-top: 50px;
+        background-color: rgb(226, 225, 133);
+        color: rgb(83, 6, 155);
+        background-image: url(images/background1.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        /* background: transparent; */
+       
+    }
+    #f1{
+        border: 3px,solid rgb(54, 30, 51);
+        height:500px;
+        width: 500px;
+        padding: 5px;
+        padding-top: 7px;
+
+    }
+    input{
+        width: 200px;
+        padding-top: 10px;
+        margin: 10px;
+    }
+    #b1{
+        width: 80px;
+        height: 30px;
+        padding-top: 1px;
+    }
+    #b1:hover{
+        width: 80px;
+        height: 30px;
+        background-color: rgb(33, 196, 27);
+        color: white;
+        cursor: pointer;
+    }
+    legend{
+        text-align: center;
+        padding-left: 20px;
+        color: white;
+    }
+
+
+</style>
+<body>
+    <form action="" id="f1">
+        <legend>Login Form</legend><br><br>
+        Enter Username:
+        <input type="text" id="t1"><br><br>
+        Age:
+        <input type="number" id="t2"><br><br>
+        Contact No:
+        <input type="number" id="t3"><br><br>
+         Email:
+        <input type="email" id="t4"><br><br>
+        Password :
+        <input type="password" id="t5"><br><br>
+        Confirm Password:
+        <input type="password" id="t6"><br><br>
+        <!-- <button type="button" value="Login" id="b1" onclick="validation()">Login</button> -->
+        <input type="button" value="Register" id="b1" onclick="validation()"><br><br><br>
+
+        <span id="s1"></span>
+    </form>
+
+
+    <script>
+        function validation(){
+            let uname = document.getElementById("t1").value
+            let age = document.getElementById("t2").value
+            let contact = document.getElementById("t3").value
+            let email = document.getElementById("t4").value
+            let password = document.getElementById("t5").value
+            let cpassword = document.getElementById("t6").value
+            let r =" "
+
+            if(uname.length == 0){
+                r += "username should not be empty.!" +"<br>"+"<br>"
+            }
+
+            if(age.length !== 0){
+               if(age < 18 || age > 25){
+                r += "age should be between 18 to 25 years.!" +"<br>"+"<br>"
+               }
+            }else{
+                 r += "Age should not be empty.!" +"<br>"+"<br>"
+            }
+
+            if(contact.length !== 0){
+                if(contact.length >10 || contact.length < 10){
+                    r += "contact no should be of 10 digit.!" +"<br>"+"<br>"
+                }
+                }else{
+                    r += "contact should not be empty.!" +"<br>"+"<br>"
+               
+            }
+            if(email.length !==0){
+                if( email !== "test@example.com"){
+                r += "email Invalid" +"<br>"+"<br>" 
+            }
+            } else{
+                r += "Email should not be empty"+"<br>"+"<br>" 
+            }
+
+            if(password.length == 0){
+                r += "password should not be empty.!" +"<br>"+"<br>"
+            }
+
+            if(cpassword.length == 0){
+                r += "cofirm password should not be empty.!" +"<br>"+"<br>"
+            }
+
+            if(uname == password){
+                r += "username and password should not be same.!" +"<br>"+"<br>"
+            }
+             if(password !== cpassword){
+                r += "password and confirm password should be same" +"<br>"+"<br>"
+             }
+
+             document.getElementById("s1").innerHTML = r
+        }
+
+        // function submit(){
+        //     alert("form submitted..!")
+        // }
+    </script>
+    
+</body>
+</html>
