@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="output"></p>
+    <button onclick="runExample()">Run Example</button>
+    <script>
+        //Abstract class
+
+        class Animal {
+            constructor(){
+                if(new.target === Animal){
+                    throw new Error("cannot intiatiate abstract class Animal");
+                    
+                }
+            }
+            sound(){
+                throw new Error("Abstracct method 'sound' must be implmented by subclass"); 
+            }
+
+        }
+
+        class dog extends Animal {
+            sound(){
+                return "Woof!";
+            }
+        }
+
+        //function to run the example
+        function runExample(){
+            let output = '';
+
+            try{
+                let animal = new Animal();
+            } catch (e){
+                output += e.message +"<br>";
+            }
+            
+            let dog = new dog();
+            output += dog.sound();   //output: woof
+
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
+    
+</body>
+</html>   
