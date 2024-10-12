@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+        <p>We have to change text</p>
+        <button type="button" onclick="msg()">change content</button>
+    </div>
+    <!-- <form action="" method="get"></form>
+    <form action="" method="post"></form> -->
+    <script>
+        function msg(){
+           const x1 = new XMLHttpRequest();
+           x1.onload = function (){
+            document.getElementById("demo").innerHTML = this.responseText
+           }
+           x1.open("GET", "hello.txt")
+           x1.send()
+        }
+        
+    </script>
+</body>
+</html>
